@@ -1,7 +1,7 @@
 import Express from 'express';
-import pkg from 'apollo-server-express';
 
-const { ApolloServer } = pkg;
+import { ApolloServer } from 'apollo-server-express';
+
 class Server {
   constructor(config) {
     this.config = config;

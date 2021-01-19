@@ -1,10 +1,6 @@
-import pkg from 'merge-graphql-schemas';
 import path from 'path';
+import { fileLoader, mergeTypes } from 'merge-graphql-schemas';
 import * as user from './user/index.js';
-
-const __dirname= path.resolve();
-
-const { fileLoader, mergeTypes } = pkg;
 
 const typesArray = fileLoader(path.join(__dirname, './**/*.graphql'));
 
