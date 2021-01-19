@@ -2,10 +2,8 @@
     "name": "apollo-server",
     "version": "1.0.0",
     "description": "graphQL",
-    "type":"module",
     "main": "index.js",
     "dependencies": {
-        "D": "^1.0.0",
         "apollo-server-express": "^2.19.1",
         "body-parser": "^1.19.0",
         "dotenv": "^8.2.0",
