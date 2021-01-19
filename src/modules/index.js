@@ -1,4 +1,4 @@
-import pkg from 'merge-graphql-schemas';
+import * as  pkg from 'merge-graphql-schemas';
 const { fileLoader, mergeTypes } = pkg;
 import path from 'path';
 // eslint-disable-next-line import/extensions

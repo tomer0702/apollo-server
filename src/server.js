@@ -1,6 +1,6 @@
 import Express from 'express';
 import { createServer } from 'http';
-import pkg from 'apollo-server-express';
+import * as pkg from 'apollo-server-express';
 const { ApolloServer } = pkg;
 
 class Server {

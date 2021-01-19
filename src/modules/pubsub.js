@@ -1,4 +1,4 @@
-import pkg from 'apollo-server-express';
+import * as pkg from 'apollo-server-express';
 const { PubSub } = pkg;
 
 const pubSubObject = new PubSub();
