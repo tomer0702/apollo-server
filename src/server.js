@@ -2,7 +2,6 @@ import Express from 'express';
 import { createServer } from 'http';
 import * as pkg from 'apollo-server-express';
 const { ApolloServer } = pkg;
-
 class Server {
   constructor(configurations) {
     this.configurations = configurations;
