@@ -1,6 +1,7 @@
 
-// import pkg from 'merge-graphql-schemas';
-// const { fileLoader, mergeTypes } = pkg;
+import * as  pkg from 'merge-graphql-schemas';
+const { fileLoader, mergeTypes } = pkg;
+
 import path from 'path';
 import { fileLoader, mergeTypes } from 'merge-graphql-schemas';
 // eslint-disable-next-line import/extensions
@@ -21,7 +22,10 @@ export default {
     },
     Mutation: {
       ...trainee.Mutation
-    }
+    },
+    Subscription: {
+      ...trainee.Subscription,
+    },
   },
   typeDefs
 };

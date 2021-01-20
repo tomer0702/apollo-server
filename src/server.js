@@ -1,25 +1,21 @@
 import Express from 'express';
-//import  ApolloServer  from 'apollo-server-express';
- import * as pkg from 'apollo-server-express';
-
- const { ApolloServer } = pkg;
+import { createServer } from 'http';
+import * as pkg from 'apollo-server-express';
+const { ApolloServer } = pkg;
 class Server {
-  constructor(config) {
-    this.config = config;
-    this.app = Express();
+  constructor(configurations) {
+    this.configurations = configurations;
+    this.app = Express()
   }
-
   bootstrap() {
-    // this.setupApollo(schema);
-    // return this;
     this.setupRouts();
     return this;
   }
 
   setupRouts() {
     const { app } = this;
-    app.get('/health-check', (req, res, next) => {
-      res.send('I am fine');
+    app.get('/test', (req, res) => {
+      res.send("Your Server is Running......");
     });
     return this;
   }
@@ -29,13 +25,16 @@ class Server {
     this.Server = new ApolloServer({
       ...schema
     });
+
     this.Server.applyMiddleware({ app });
+    this.httpServer = createServer(app);
+    this.Server.installSubscriptionHandlers(this.httpServer);
     this.run();
-  }
+  };
 
   run() {
-    const { app, config: { PORT } } = this;
-    app.listen(PORT, (err) => {
+    const { configurations: { PORT } } = this;
+    this.httpServer.listen(PORT, (err) => {
       if (err) {
         console.log(err);
       }
@@ -43,4 +42,4 @@ class Server {
     });
   }
 }
-export default Server;
+export default Server
