@@ -12,7 +12,7 @@ export default class UserAPI extends RESTDataSource {
   }
 
   getMe() {
-    return this.get('./me');
+    return this.get('/me');
   }
 
   loginUser(payload) {
