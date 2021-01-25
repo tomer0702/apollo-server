@@ -8,8 +8,9 @@ export default {
     console.log('response',response);
     return response.data.records;
   },
-  getTrainee: (parent, args, context) => {
-    const { id } = args;
-    return user.getUser(id);
+  getTrainee:async (parent, args, context) => {
+    const { dataSources: { userAPI } } = context;
+    const response= await userAPI.me();
+    return response.data;
   }
   };
