@@ -1,0 +1,23 @@
+input CreateUserInput {
+    name: String!
+    email: String!
+    password: String!
+    role:String
+} 
+input LoginInput {
+    email: String!
+    password: String!
+}
+
+input UpdateUser {
+      originalId:ID!
+      name: String
+      email: String
+      password: String
+}
+
+input GetInput{
+skip: String
+limit: String
+sort: String
+}

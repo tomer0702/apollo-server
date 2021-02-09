@@ -1,0 +1,30 @@
+scalar Date
+
+type User{
+    _id: ID!
+    originalId: ID!
+    name: String!
+    email: String!
+    password: String
+}
+
+type TRAINEELIST {
+    status: String
+    message: String
+    data: ALLFIELD
+}
+
+type ALLFIELD {
+    count: String
+    records: [DATA]
+}
+
+type DATA{
+    email: String
+    name: String
+    role: String
+    originalId: String
+    _id: String
+    createdAt: Date
+}    
+
